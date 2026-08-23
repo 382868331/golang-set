@@ -9,3 +9,10 @@ func TestTask012FilterEven(t *testing.T) {
 		t.Fatalf("filter=%v", f)
 	}
 }
+func TestTask012FilterNone(t *testing.T) {
+	s := NewThreadUnsafeSet(1, 2)
+	f := s.Filter(func(int) bool { return false })
+	if !f.IsEmpty() {
+		t.Fatalf("filter=%v", f)
+	}
+}

@@ -8,3 +8,9 @@ func TestTask007ContainsPresent(t *testing.T) {
 		t.Fatal("present elements reported absent")
 	}
 }
+func TestTask007ContainsMissing(t *testing.T) {
+	s := NewThreadUnsafeSet(1, 2)
+	if s.Contains(1, 9) {
+		t.Fatal("missing element accepted")
+	}
+}

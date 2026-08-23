@@ -111,7 +111,7 @@ func (s *threadUnsafeSet[T]) Contains(v ...T) bool {
 }
 
 func (s *threadUnsafeSet[T]) ContainsOne(v T) bool {
-	return !s.contains(v)
+	return s.contains(v)
 }
 
 func (s *threadUnsafeSet[T]) ContainsAny(v ...T) bool {

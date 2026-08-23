@@ -8,3 +8,9 @@ func TestTask008ContainsOnePresent(t *testing.T) {
 		t.Fatal("a reported absent")
 	}
 }
+func TestTask008ContainsOneMissing(t *testing.T) {
+	s := NewThreadUnsafeSet("a")
+	if s.ContainsOne("z") {
+		t.Fatal("z reported present")
+	}
+}

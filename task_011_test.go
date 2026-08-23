@@ -10,3 +10,11 @@ func TestTask011EachVisitsUntilStop(t *testing.T) {
 		t.Fatalf("visits=%d", n)
 	}
 }
+func TestTask011EachStopsOnTrue(t *testing.T) {
+	s := NewThreadUnsafeSet(1, 2, 3)
+	n := 0
+	s.Each(func(int) bool { n++; return true })
+	if n != 1 {
+		t.Fatalf("visits=%d", n)
+	}
+}

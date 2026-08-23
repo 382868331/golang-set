@@ -9,3 +9,10 @@ func TestTask005ClearMany(t *testing.T) {
 		t.Fatalf("remaining=%v", s)
 	}
 }
+func TestTask005ClearSingleton(t *testing.T) {
+	s := NewThreadUnsafeSet(9)
+	s.Clear()
+	if !s.IsEmpty() {
+		t.Fatalf("remaining=%v", s)
+	}
+}

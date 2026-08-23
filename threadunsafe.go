@@ -93,7 +93,6 @@ func (s *threadUnsafeSet[T]) Clear() {
 	// https://github.com/golang/go/blob/29bbca5c2c1ad41b2a9747890d183b6dd3a4ace4/src/runtime/map.go#L993)
 	for key := range *s {
 		delete(*s, key)
-		break
 	}
 }
 

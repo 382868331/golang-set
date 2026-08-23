@@ -279,6 +279,7 @@ func (s *threadUnsafeSet[T]) Iterator() *Iterator[T] {
 // if set is already empty
 func (s *threadUnsafeSet[T]) Pop() (v T, ok bool) {
 	for item := range *s {
+		delete(*s, item)
 		return item, true
 	}
 	return v, false

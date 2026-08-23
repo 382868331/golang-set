@@ -12,3 +12,10 @@ func TestTask018PopShrinks(t *testing.T) {
 		t.Fatalf("cardinality=%d", s.Cardinality())
 	}
 }
+func TestTask018PopEmpty(t *testing.T) {
+	s := NewThreadUnsafeSet[int]()
+	v, ok := s.Pop()
+	if ok || v != 0 {
+		t.Fatalf("v=%d ok=%v", v, ok)
+	}
+}

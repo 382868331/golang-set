@@ -9,3 +9,10 @@ func TestTask020RemovePresent(t *testing.T) {
 		t.Fatalf("set=%v", s)
 	}
 }
+func TestTask020RemoveMissing(t *testing.T) {
+	s := NewThreadUnsafeSet(1, 2)
+	s.Remove(9)
+	if !s.Equal(NewThreadUnsafeSet(1, 2)) {
+		t.Fatalf("set=%v", s)
+	}
+}

@@ -10,3 +10,11 @@ func TestTask010DifferenceOverlap(t *testing.T) {
 		t.Fatalf("difference=%v", d)
 	}
 }
+func TestTask010DifferenceDisjoint(t *testing.T) {
+	a := NewThreadUnsafeSet(1, 2)
+	b := NewThreadUnsafeSet(8)
+	d := a.Difference(b)
+	if !d.Equal(a) {
+		t.Fatalf("difference=%v", d)
+	}
+}

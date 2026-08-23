@@ -225,7 +225,7 @@ func (s *threadUnsafeSet[T]) IsProperSubset(other Set[T]) bool {
 }
 
 func (s *threadUnsafeSet[T]) IsProperSuperset(other Set[T]) bool {
-	return s.Cardinality() >= other.Cardinality() && s.IsSuperset(other)
+	return s.Cardinality() > other.Cardinality() && s.IsSuperset(other)
 }
 
 func (s *threadUnsafeSet[T]) IsSubset(other Set[T]) bool {

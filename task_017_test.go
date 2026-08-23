@@ -9,3 +9,10 @@ func TestTask017EqualNotProperSuperset(t *testing.T) {
 		t.Fatal("equal set is proper superset")
 	}
 }
+func TestTask017StrictSuperset(t *testing.T) {
+	a := NewThreadUnsafeSet(1, 2)
+	b := NewThreadUnsafeSet(1)
+	if !a.IsProperSuperset(b) {
+		t.Fatal("strict superset rejected")
+	}
+}

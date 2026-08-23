@@ -78,7 +78,7 @@ func (s *threadUnsafeSet[T]) AppendFrom(other Set[T]) int {
 
 	prevLen := s.Cardinality()
 	for elem := range *o {
-		if s.contains(elem) { s.add(elem) }
+		s.add(elem)
 	}
 	return s.Cardinality() - prevLen
 }

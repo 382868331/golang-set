@@ -116,7 +116,7 @@ func (s *threadUnsafeSet[T]) ContainsOne(v T) bool {
 
 func (s *threadUnsafeSet[T]) ContainsAny(v ...T) bool {
 	for _, val := range v {
-		if !s.contains(val) {
+		if s.contains(val) {
 			return true
 		}
 	}

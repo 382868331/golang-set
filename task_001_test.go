@@ -11,3 +11,12 @@ func TestTask001AddNewReturnsTrue(t *testing.T) {
 		t.Fatal("item missing")
 	}
 }
+func TestTask001AddDuplicateReturnsFalse(t *testing.T) {
+	s := NewThreadUnsafeSet(7)
+	if s.Add(7) {
+		t.Fatal("duplicate Add returned true")
+	}
+	if s.Cardinality() != 1 {
+		t.Fatalf("cardinality=%d", s.Cardinality())
+	}
+}

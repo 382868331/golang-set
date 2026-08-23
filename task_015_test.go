@@ -7,3 +7,8 @@ func TestTask015EmptySet(t *testing.T) {
 		t.Fatal("empty set reported non-empty")
 	}
 }
+func TestTask015NonEmptySet(t *testing.T) {
+	if NewThreadUnsafeSet(1).IsEmpty() {
+		t.Fatal("non-empty set reported empty")
+	}
+}

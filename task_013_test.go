@@ -9,3 +9,10 @@ func TestTask013EqualSameMembers(t *testing.T) {
 		t.Fatal("same members not equal")
 	}
 }
+func TestTask013UnequalDifferentSize(t *testing.T) {
+	a := NewThreadUnsafeSet(1)
+	b := NewThreadUnsafeSet(1, 2)
+	if a.Equal(b) {
+		t.Fatal("different size equal")
+	}
+}

